@@ -3,9 +3,10 @@
 {
   imports =
     [ # Include the results of the hardware scan.
+      ../../modules/clash
       ./hardware-configuration.nix
     ];
-
+  nixpkgs.config.allowUnfree = true;
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -19,6 +20,9 @@
     networkmanager.enable = true;
   };
 
+  hardware.bluetooth.enable = true;
+
+  services.blueman.enable = true;
   # Set time zone.
   time.timeZone = "Asia/Shanghai";
 
@@ -30,14 +34,9 @@
     font = "LatArCyrHeb-16";
     keyMap = "us";
   };
+  programs.zsh.enable = true;
   programs.niri.enable = true;
-  programs.waybar.enable = true;
-  programs.clash-verge = {
-    enable = true;
-    autoStart = true;
-    tunMode = true;
-    serviceMode = true;
-  };
+  #programs.waybar.enable = true;
   security = {
     pam.services.swaylock = {};
   };
@@ -125,6 +124,8 @@
     xdg-desktop-portal-gtk
     gvfs
   ];
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

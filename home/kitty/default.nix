@@ -21,7 +21,7 @@
      tab_bar_style powerline
      tab_powerline_style slanted
      inactive_tab_foreground #CDD6F4
-     inactive_tab_background #1E1E2E
+     inactive_tab_background #E6DDD3
      tab_title_template " {index}: {title}{'  {}'.format(num_windows) if num_windows > 1 else \'\'}"
      active_tab_foreground #11111B
      active_tab_background #CBA6F7
