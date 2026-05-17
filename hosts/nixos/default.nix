@@ -69,9 +69,9 @@
     fontconfig = {
       enable = true;
       defaultFonts = {
-        serif = ["Noto Sans" "Noto Sans CJK SC"];
-        sansSerif = ["Noto Serif" "Noto Serif CJK SC"];
-        monospace = ["Fira Code"];
+	sansSerif = [ "Noto Sans CJK SC" "Noto Sans CJK JP" "DejaVu Sans" ];
+        serif = [ "Noto Serif CJK SC" "Noto Serif CJK JP" "DejaVu Serif" ];
+        monospace = [ "Noto Sans Mono CJK SC" "DejaVu Sans Mono" ];
       };
     };
   };

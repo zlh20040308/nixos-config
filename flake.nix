@@ -29,10 +29,10 @@
       nixos = let
         username = "feng";
         specialArgs = {inherit username;};
+        system = "x86_64-linux";
       in
         nixpkgs.lib.nixosSystem {
           inherit specialArgs;
-          system = "x86_64-linux";
 
           modules = [
             ./hosts/nixos

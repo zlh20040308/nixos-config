@@ -6,6 +6,9 @@
     ../../home/fcitx5
     ../../home/wallpaper
     ../../home/kitty
+    ../../home/claude
+    ../../home/obs
+    ../../home/tmux
   ];
   home.username = "feng";
   home.homeDirectory = "/home/feng";
@@ -14,7 +17,6 @@
     qq
     btop
     wev
-    noctalia-shell
     fastfetch
     neovim
     yazi

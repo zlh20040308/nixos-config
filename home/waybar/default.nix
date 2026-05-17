@@ -1,4 +1,6 @@
-{pkgs, ...}: {
+{config, pkgs, ...}: let
+  waybarStylePath = "${config.home.homeDirectory}/nixos-config/home/waybar/style.css";
+in {
   home.packages = with pkgs; [
     pavucontrol
     networkmanagerapplet
@@ -123,6 +125,6 @@
       };
     };
 
-    style = builtins.readFile ./style.css;
+    style = config.lib.file.mkOutOfStoreSymlink waybarStylePath;
   };
 }
