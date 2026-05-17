@@ -4,6 +4,7 @@ in {
   home.packages = with pkgs; [
     pavucontrol
     networkmanagerapplet
+    brightnessctl
     # Niri 需要的工作区脚本依赖
     jq  # 用于解析 Niri 的 JSON 输出
   ];
@@ -33,6 +34,7 @@ in {
           "cpu"
           "memory"
           "temperature"
+          "backlight"
           "battery"
           "tray"
         ];
@@ -117,6 +119,14 @@ in {
             ""
             ""
           ];
+        };
+
+        backlight = {
+          device = "amdgpu_bl1";
+          format = "{icon} {percent}%";
+          format-icons = ["󰃞" "󰃟" "󰃝" "󰃠"];
+          on-scroll-up = "brightnessctl set 5%+";
+          on-scroll-down = "brightnessctl set 5%-";
         };
 
         tray = {

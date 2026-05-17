@@ -19,7 +19,6 @@
     # Configure network connections interactively with nmcli or nmtui.
     networkmanager.enable = true;
   };
-
   hardware.bluetooth.enable = true;
 
   services.blueman.enable = true;
