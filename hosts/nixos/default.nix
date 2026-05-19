@@ -70,7 +70,7 @@
       defaultFonts = {
 	sansSerif = [ "Noto Sans CJK SC" "Noto Sans CJK JP" "DejaVu Sans" ];
         serif = [ "Noto Serif CJK SC" "Noto Serif CJK JP" "DejaVu Serif" ];
-        monospace = [ "Noto Sans Mono CJK SC" "DejaVu Sans Mono" ];
+	monospace = [ "Fira Code" "DejaVu Sans Mono" "Noto Sans Mono CJK SC" ];
       };
     };
   };
