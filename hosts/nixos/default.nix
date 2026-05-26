@@ -82,10 +82,7 @@
   };
   
   services.dbus.enable = true;
-  services.displayManager.gdm = {
-    enable = true;
-    wayland = true;
-  };
+  services.displayManager.gdm.enable = true;
 
   programs.xwayland.enable = true;
 
@@ -99,6 +96,7 @@
 
   services.udisks2.enable = true;
   services.gvfs.enable = true;
+  services.gnome.gnome-keyring.enable = true;
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
   # Define a user account

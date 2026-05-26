@@ -2,6 +2,9 @@
 {
   imports = [
     ../../home/zsh
+    ../../home/niri
+    ../../home/nvim
+    ../../home/gtk
     ../../home/waybar
     ../../home/fcitx5
     ../../home/wallpaper
@@ -14,11 +17,11 @@
   home.homeDirectory = "/home/feng";
   home.stateVersion = "25.11";
   home.packages = with pkgs; [
+    vscode
     qq
     btop
     wev
     fastfetch
-    neovim
     yazi
     tmux
     fuzzel

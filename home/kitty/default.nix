@@ -12,8 +12,8 @@
      bold_font        auto
      italic_font      auto
      bold_italic_font auto
-     background_opacity 0.92
-     background_blur 30
+     background_opacity 0.82
+     background_blur 12
      hide_window_decorations yes
      confirm_os_window_close 0
      tab_bar_edge bottom
