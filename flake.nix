@@ -5,6 +5,7 @@
     nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixpkgs-unstable&shallow=1";
     home-manager.url = "git+https://gitee.com/mirrors/home-manager-nix";
     nixpkgs-stable.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-25.11&shallow=1";
+    nixvim.url = "github:nix-community/nixvim";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -22,6 +23,7 @@
   outputs = inputs @ {
     self,
     nixpkgs,
+    nixvim,
     home-manager,
     ...
   }: {

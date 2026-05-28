@@ -1,6 +1,7 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nixvim, ... }:
 {
   imports = [
+    nixvim.homeModules.nixvim
     ../../home/zsh
     ../../home/niri
     ../../home/nvim
