@@ -3,6 +3,8 @@
   programs.nixvim = {
     enable = true;
 
+    version.enableNixpkgsReleaseCheck = false;
+
     colorschemes.nord.enable = true;
 
     globals.mapleader = " ";
@@ -50,7 +52,7 @@
               parameterHints = true;
               chainingHints = true;
             };
-            checkOnSave.command = "clippy";
+            checkOnSave = true;
           };
         };
         keymaps = {
