@@ -11,6 +11,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  swapDevices = [{
+    device = "/dev/disk/by-uuid/f1b6c56b-d45b-4958-b160-ba1141e643a1";
+  }];
+
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
@@ -98,7 +102,22 @@
   services.gvfs.enable = true;
   services.gnome.gnome-keyring.enable = true;
   services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
+
+  services.upower = {
+    enable = true;
+    percentageLow = 20;
+    percentageCritical = 10;
+    percentageAction = 5;
+    criticalPowerAction = "PowerOff";
+  };
+
+  services.logind.settings.Login = {
+    HandleLidSwitch = "suspend";
+    HandleLidSwitchExternalPower = "lock";
+    HandleLidSwitchDocked = "ignore";
+    HandlePowerKey = "suspend";
+    IdleAction = "ignore";
+  };
   # Define a user account
   users.users.feng = {
     isNormalUser = true;
