@@ -28,7 +28,7 @@
     ...
   }: {
     nixosConfigurations = {
-      nixos = let
+      thinkpad-t14 = let
         username = "feng";
         specialArgs = { inherit username; };
         system = "x86_64-linux";
@@ -37,7 +37,7 @@
           inherit specialArgs;
 
           modules = [
-            ./hosts/nixos
+            ./hosts/thinkpad-t14
 
             home-manager.nixosModules.home-manager
             {

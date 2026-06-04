@@ -23,7 +23,7 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking = {
-    hostName = "nixos";
+    hostName = "thinkpad-t14";
     # Configure network connections interactively with nmcli or nmtui.
     networkmanager.enable = true;
   };
