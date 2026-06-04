@@ -18,6 +18,8 @@
     device = "/dev/disk/by-uuid/f1b6c56b-d45b-4958-b160-ba1141e643a1";
   }];
 
+  zramSwap.enable = true;
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking = {
@@ -41,6 +43,7 @@
   };
   programs.zsh.enable = true;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.auto-optimise-store = true;
 
   nix.gc = {
     automatic = lib.mkDefault true;
@@ -75,6 +78,7 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.earlyoom.enable = true;
 
   system.stateVersion = "25.11";
 
