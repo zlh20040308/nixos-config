@@ -4,6 +4,9 @@
   imports =
     [ # Include the results of the hardware scan.
       ../../modules/clash
+      ../../modules/fonts
+      ../../modules/power
+      ../../modules/desktop
       ./hardware-configuration.nix
     ];
   nixpkgs.config.allowUnfree = true;
@@ -38,91 +41,19 @@
     keyMap = "us";
   };
   programs.zsh.enable = true;
-  programs.niri.enable = true;
-  #programs.waybar.enable = true;
-  security = {
-    pam.services.swaylock = {};
-  };
-  xdg.portal = { 
-    enable = true;
-    extraPortals = [
-      # pkgs.xdg-desktop-portal-wlr
-      pkgs.xdg-desktop-portal-gtk
-    ];  
-    config.niri = {
-      "org.freedesktop.impl.portal.FileChooser" = [ "gtk" ];
-    };
-  };
-
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-cjk-sans
-    noto-fonts-color-emoji
-
-    dejavu_fonts
-
-    nerd-fonts.fira-code
-    nerd-fonts.jetbrains-mono
-  ];
-
-  fonts = {
-    enableDefaultPackages = true;
-    fontconfig = {
-      enable = true;
-      defaultFonts = {
-	sansSerif = [ "DejaVu Sans" "Noto Sans CJK SC" "Noto Sans CJK JP" ];
-        serif = [ "DejaVu Serif" "Noto Serif CJK SC" "Noto Serif CJK JP" ];
-	monospace = [ "Fira Code" "DejaVu Sans Mono" "Noto Sans Mono CJK SC" ];
-      };
-    };
-  };
 
   nix.gc = {
     automatic = lib.mkDefault true;
     dates = lib.mkDefault "weekly";
     options = lib.mkDefault "--delete-older-than 7d";
   };
-  
-  services.dbus.enable = true;
-  services.displayManager.gdm.enable = true;
 
-  programs.xwayland.enable = true;
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
-  # Enable touchpad support
-  services.libinput.enable = true;
-
-  services.udisks2.enable = true;
-  services.gvfs.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  services.power-profiles-daemon.enable = true;
-
-  services.upower = {
-    enable = true;
-    percentageLow = 20;
-    percentageCritical = 10;
-    percentageAction = 5;
-    criticalPowerAction = "PowerOff";
-  };
-
-  services.logind.settings.Login = {
-    HandleLidSwitch = "suspend";
-    HandleLidSwitchExternalPower = "lock";
-    HandleLidSwitchDocked = "ignore";
-    HandlePowerKey = "suspend";
-    IdleAction = "ignore";
-  };
   # Define a user account
   users.users.feng = {
     isNormalUser = true;
     initialPassword = "1234";
-    extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "networkmanager" "input" ]; # Enable 'sudo' for the user.
   };
 
   programs.firefox.enable = true;
@@ -149,4 +80,3 @@
   system.stateVersion = "25.11";
 
 }
-
