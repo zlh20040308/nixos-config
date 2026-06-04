@@ -10,6 +10,8 @@ spawn-at-startup "mako"
 spawn-at-startup "waybar"
 spawn-at-startup "awww-daemon"
 spawn-at-startup "~/.config/wallpaper/switch.sh"
+spawn-at-startup "fcitx5"
+spawn-at-startup "nm-applet"
 
 input {
     keyboard {

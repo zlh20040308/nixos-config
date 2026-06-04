@@ -1,4 +1,6 @@
 { config, pkgs, ... }: {
+  hardware.graphics.enable = true;
+
   programs.niri.enable = true;
 
   security.pam.services.swaylock = {};
@@ -12,7 +14,6 @@
   };
 
   services.dbus.enable = true;
-  services.displayManager.gdm.enable = true;
 
   programs.xwayland.enable = true;
 
