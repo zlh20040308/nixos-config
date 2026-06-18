@@ -9,7 +9,7 @@
     shellAliases = {
       ll = "ls -l";
       edit = "sudo -e";
-      update = "sudo nixos-rebuild switch";
+      update = "sudo -E nixos-rebuild switch --flake ~/nixos-config#thinkpad-t14";
     };
 
     history.size = 10000;

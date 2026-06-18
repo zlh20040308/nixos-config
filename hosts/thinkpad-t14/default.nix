@@ -26,7 +26,11 @@
     hostName = "thinkpad-t14";
     # Configure network connections interactively with nmcli or nmtui.
     networkmanager.enable = true;
+    firewall.enable = true;
+    firewall.allowPing = false;
   };
+
+  services.fwupd.enable = true;
   hardware.bluetooth.enable = true;
 
   services.blueman.enable = true;

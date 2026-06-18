@@ -3,12 +3,7 @@
   programs.obs-studio = {
     enable = true;
 
-    # optional Nvidia hardware acceleration
-    package = (
-      pkgs.obs-studio.override {
-        cudaSupport = true;
-      }
-    );
+    # AMD hardware acceleration (no CUDA needed)
 
     plugins = with pkgs.obs-studio-plugins; [
       wlrobs
