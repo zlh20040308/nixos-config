@@ -42,8 +42,14 @@
     keyMap = "us";
   };
   programs.zsh.enable = true;
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" "configurable-impure-env" ];
   nix.settings.auto-optimise-store = true;
+  nix.settings.impure-env = [ "http_proxy" "https_proxy" ];
+
+  systemd.services.nix-daemon.environment = {
+    http_proxy = "http://127.0.0.1:7890";
+    https_proxy = "http://127.0.0.1:7890";
+  };
 
   nix.gc = {
     automatic = lib.mkDefault true;

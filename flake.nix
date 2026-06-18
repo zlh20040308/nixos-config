@@ -2,9 +2,9 @@
   description = "NixOS configuration of Feng";
 
   inputs = {
-    nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-26.05&shallow=1";
+    nixpkgs.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
     home-manager.url = "git+https://gitee.com/mirrors/home-manager-nix";
-    nixpkgs-stable.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-26.05&shallow=1";
+    nixpkgs-stable.url = "git+https://mirrors.nju.edu.cn/git/nixpkgs.git?ref=nixos-unstable&shallow=1";
     nixvim.url = "github:nix-community/nixvim";
     home-manager = {
       inputs.nixpkgs.follows = "nixpkgs";
