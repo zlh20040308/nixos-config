@@ -18,6 +18,7 @@
   home.homeDirectory = "/home/feng";
   home.stateVersion = "25.11";
   home.packages = with pkgs; [
+    jdk21
     vscode
     qq
     btop
@@ -29,6 +30,8 @@
     lazygit
     ueberzugpp
     wl-clipboard
+    prismlauncher
+    hugo
   ];
   programs.git = {
     enable = true;

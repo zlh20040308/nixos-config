@@ -18,6 +18,9 @@
     device = "/dev/disk/by-uuid/f1b6c56b-d45b-4958-b160-ba1141e643a1";
   }];
 
+  boot.resumeDevice = "/dev/disk/by-uuid/f1b6c56b-d45b-4958-b160-ba1141e643a1";
+  boot.kernelParams = [ "resume=/dev/disk/by-uuid/f1b6c56b-d45b-4958-b160-ba1141e643a1" ];
+
   zramSwap.enable = true;
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
