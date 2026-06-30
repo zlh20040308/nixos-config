@@ -48,6 +48,8 @@
     keyMap = "us";
   };
   programs.zsh.enable = true;
+  programs.nix-ld.enable = true;
+
   nix.settings.experimental-features = [ "nix-command" "flakes" "configurable-impure-env" ];
   nix.settings.auto-optimise-store = true;
   nix.settings.impure-env = [ "http_proxy" "https_proxy" ];

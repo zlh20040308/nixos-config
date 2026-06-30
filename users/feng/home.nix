@@ -20,6 +20,7 @@
   home.packages = with pkgs; [
     jdk21
     vscode
+    jetbrains.idea
     qq
     btop
     wev
